@@ -4,7 +4,7 @@
   "description": "Priority function queue with hrtime considerations",
   "main": "index.js",
   "scripts": {
-    "preversion": "npm run readme",
+    "preversion": "npm test && npm run readme",
     "lint": "eslint lib test *.js",
     "test": "nyc mocha",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
