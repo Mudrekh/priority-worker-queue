@@ -32,5 +32,9 @@
     "sinon": "^9.0.3",
     "sinon-as-promised": "^4.0.3",
     "sinon-chai": "^3.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:Mudrekh/priority-worker-queue.git"
+  },
 }
