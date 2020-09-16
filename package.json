@@ -36,5 +36,5 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:Mudrekh/priority-worker-queue.git"
-  },
+  }
 }
