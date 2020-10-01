@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Mudrekh/priority-worker-queue.svg?branch=master)](https://travis-ci.org/Mudrekh/priority-worker-queue) [![Coverage Status](https://coveralls.io/repos/github/Mudrekh/priority-worker-queue/badge.svg?branch=master)](https://coveralls.io/github/Mudrekh/priority-worker-queue?branch=master)
+[![Build Status](https://travis-ci.org/Mudrekh/priority-worker-queue.svg?branch=master)](https://travis-ci.org/Mudrekh/priority-worker-queue) [![Coverage Status](https://coveralls.io/repos/github/Mudrekh/priority-worker-queue/badge.svg?branch=master)](https://coveralls.io/github/Mudrekh/priority-worker-queue?branch=master) ![npm](https://img.shields.io/npm/v/priority-worker-queue)
 
 # Priority Worker Queue for asynchronous job execution
 
