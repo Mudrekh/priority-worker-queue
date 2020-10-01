@@ -1,8 +1,10 @@
 const util = require('util');
+const EventEmitter = require('events');
 
 const PriorityWorkerQueue = require('../../lib/PriorityWorkerQueue.js');
 
 const timeout = util.promisify(setTimeout);
+const immediate = util.promisify(setImmediate);
 
 describe('PriorityWorkerQueue', () => {
   context('The constructor', () => {
@@ -75,6 +77,18 @@ describe('PriorityWorkerQueue', () => {
     it('should reject when the job throws', async () => {
       const spy = sinon.stub().rejects();
       await pwq.enqueue({ func: spy }).should.eventually.be.rejected;
+    });
+    it('should only process one job at a time', async () => {
+      const emitter = new EventEmitter();
+      const res1 = new Promise(resolve => emitter.on('a', resolve));
+      const res2 = new Promise(resolve => emitter.on('b', resolve));
+      const p1 = pwq.enqueue({ func: () => res1 });
+      const p2 = pwq.enqueue({ func: () => res2 });
+      await immediate();
+      should.equal(await pwq._process(), false);
+      emitter.emit('a');
+      emitter.emit('b');
+      await Promise.all([p1, p2]);
     });
   });
 });
